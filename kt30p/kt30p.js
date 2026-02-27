@@ -6,9 +6,19 @@ let students = [
     { id: 5, name: "Hoàng Văn E", score: 3.8, gender: "Nam" }
 ];
 
-const excellentStudent = (students);
-console.log("Danh sách học sinh viên xuất sắc: ",excellentStudent);
+function excellentStudents(studentsList) {
+  return studentsList.filter(students => students.score >= 8.0);
+}
 
-const studentLabels = (students) => {
-    const 
-};
+function checkStudents(studentsList) {
+  return studentsList.some(students => students.score < 4.0)
+    ? "Có sinh viên yếu" : "Không có sinh viên yếu";
+}
+function studentLabels(studentsList) {
+  return studentsList.map(students => 
+    `Tên: ${students.name} - Điểm: ${students.score}`
+  );
+}
+console.log("Danh sách sinh viên xuất sắc:", excellentStudents(students));
+console.log(`Kiểm tra : ${checkStudents(students)}`);
+console.log("Danh sách hiển thị:", studentLabels(students));
